@@ -1,38 +1,193 @@
-\documentclass{article}
+\documentclass[letterpaper,11pt]{article}
 
-\title{My First LaTeX Document}
-\author{Your Name}
-\date{\today}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\input{glyphtounicode}
+\usepackage[margin=1.25cm]{geometry}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.15in}
+ \addtolength{\textwidth}{0.3in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{0pt}}
+  }
+}
+
+\newcommand{\classesList}[4]{
+    \item\small{
+        {#1 #2 #3 #4 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textbf{\small #2} \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & \textbf{\small #2}\\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}\vspace{0pt}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+
 
 \begin{document}
 
-\maketitle
+%----------HEADING----------
+\begin{center}
+        {\Large \scshape Abhinav Gupta} \\[2mm]
+    \footnotesize \raisebox{-0.1\height}
+    {\faEnvelope\  \underline{abbigupta.j18@gmail.com} ~}
+    {\faLinkedin\ \underline{\href{www.linkedin.com/in/abhinav-gupta-houstontx}{linkedin.com/in/abhinav-gupta-houstontx}} }
+    {\faGithub\ \underline{\href{www.github.com/gupta-bananas}{github.com/gupta-bananas}} ~}
+    \vspace{-8pt}
+\end{center}
 
-\section{Introduction}
-This is my very first LaTeX document.  
-I can write text, equations, and lists.
+ %-----------EDUCATION-----------
+\section{Education} 
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Cypress Woods High School}{Expected Graduation: May 2026}
+      {High School Diploma  |\textbf{ GPA: 3.78}  
+      }{Houston, TX}
+  \resumeSubHeadingListEnd
+    \resumeItemListStart
+        \resumeItem {Relevant Advanced Placement coursework: Calculus BC, Physics 1 \& 2 (Mechanics + E\&M), Computer Science A \& Statistics}
+        \vspace{-5pt}
+        \resumeItem {College Level Dual Enrollment Coursework via Lone Star College: English 1302; Chemistry 1412; Math 1314; Sociology 1301; Art History 1303}
+    \resumeItemListEnd
+    \vspace{-10pt}
+%-----------Experience---------------
+\section{Work Experience}
+    \resumeSubHeadingListStart
+                \resumeSubheading{Massachusetts Institute of Technology $|$ Lincoln Laboratory}{February 2025 -- August 2025}{Beaver Works Summer Institute | Software Developer and Research Specialist}{Boston, MA} 
+                \resumeItemListStart
+                    \resumeItem{Selected as \textbf{1 of ~27 students out of 400 applicants nationwide} for MIT’s highly competitive
+program,  focused on \textbf{research and engineering our own unmanned autonomous air vehicle}.}
+                    \resumeItem{Used \textbf{Python and ROS2} to develop \textbf{autonomous} \textbf{navigation system}; processing data from \textbf{onboard} Optical Flow and Accelerometer \textbf{sensors}; implementing \textbf{Extended Kalman Filter (EKF)}  with \textbf{±0.35m vehicle position accuracy}}
+                    \resumeItem{Modeled autonomous vehicle aerodynamics, solving \textbf{3-Dimensional Kinematics} with \textbf{Euler angle transformation}\textbf{s} across \textbf{6} \textbf{degrees of freedom} in \textbf{linear algebraic} models to simulate autonomous drone flight dynamics}
+                    \resumeItemListEnd
+            \resumeSubheading{iCode $|$ Coding education franchise for kids}{November 2024 -- February 2025}{Lead Computer Science Instructor}{Cypress, TX} 
+                \resumeItemListStart
+                    \resumeItem{Taught weekly lessons on \textbf{C\# and .NET} to 14 students aged 12-16, covering \textbf{OOP concepts, Data Structures (Arrays, Lists, HashMaps)}, and Full-Stack Dev. with \textbf{.NET}, \textbf{SQL databases}, and \textbf{RESTful API} integration}
+                    \resumeItem{\textbf{Conducted 12+ parent consultations }providing monthly progress updates on their students, creating individualized lesson plans with that \textbf{improved student project completion rates by 45\%.}}
+                    \resumeItemListEnd
+    
+    \resumeSubHeadingListEnd
+    \vspace{-12pt}
 
-\section{Math Example}
-Here is an inline equation: $E = mc^2$.  
+%-----------PROJECTS-----------
+\section{Projects} 
+    \vspace{-5pt}
+    \resumeSubHeadingListStart
+    \resumeProjectHeading
+            {\textbf{{Social Media Advertisement Dataset Analysis}} $|$ \emph{\href{https://github.com/gupta-bananas/social-media-advertisement-data-analysis-insights}{Github} \href{https://github.com/gupta-bananas/social-media-advertisement-data-analysis-insights}{Source Code}}}{Python $|$ Pandas $|$ Numpy $|$ Seaborn}
+            \\[5mm]
+          \resumeItemListStart
+            \resumeItem{Analyzed \textbf{400K+ Facebook \& Instagram ad events} across \textbf{180+ campaigns}, performing \textbf{7 univariate, bivariate, and multivariate tests }to identify trends across 4 ad formats, and  age demographics}
+            \resumeItem{Discovered \textbf{Stories and Carousels drive 2x higher engagement} than standard posts, with \textbf{Facebook hosting 120 ads} (60\% female targeting, avg age 29) vs \textbf{Instagram's 60 ads} (50/50 gender split, avg age 31).}
+          \resumeItemListEnd
+ \vspace{-22pt}
+ \resumeProjectHeading
+            {\textbf{{Automated Tardy Recording System for Cypress Woods High School}} $|$ \emph{\href{https://github.com/gupta-bananas/eSchool-Tardy-System}{Github Source Code}}}{Python $|$ HTML}
+            \\[5mm]
+          \resumeItemListStart
+            \resumeItem{Made tardy pass system for \textbf{3,200+ }campus students, \textbf{saving staff upto 1 hours a day} and \textbf{eliminating hand written passes}.}
+             \resumeItem{Saving staff from \textbf{1 min} (handwrite pass) to \textbf{10 sec} (automation) per student handling\textbf{ \textbf{50+ tardies passes daily}}}
+          \resumeItem{Built system using Python: \textbf{Barcode scanner to scan ID} and \textbf{retrieve student info from CSV database} and creating \textbf{GUI  preview} and then \textbf{1-click printing using DymoTurbo 450}}
+          \resumeItemListEnd
+\resumeSubHeadingListEnd
+\vspace{-15pt}
 
-And a displayed equation:
-\[
-a^2 + b^2 = c^2
-\]
 
-\section{Lists}
-Here is a bullet list:
-\begin{itemize}
-    \item First item
-    \item Second item
-    \item Third item
-\end{itemize}
 
-Here is a numbered list:
-\begin{enumerate}
-    \item Step one
-    \item Step two
-    \item Step three
-\end{enumerate}
+%-----------LEADERSHIP-----------
+\section{Leadership} 
+    \vspace{-5pt}
+    \resumeSubHeadingListStart
+                   \resumeProjectHeading
+            {\textbf{{Computer Science Middle School Outreach Program}} $|$\emph{{ Founder and Directer of Instruction}}}{August 2024 -- Present}
+            \\[5mm]
+          \resumeItemListStart
+            \resumeItem{Established \textbf{free of cost} Middle School C.S. Education Program serving\textbf{ 180+ students across 2 CFISD partner schools} (Goodson and Spillane M.S.).}
+            \resumeItem{Teaching  \textbf{programming fundamentals}, and \textbf{algorithmic problem-solving} through \textbf{70+ hours} of instruction, preparing middle school students for \textbf{coding contests and college level AP C.S.} curriculum}
+            \resumeItem{\textbf{Featured by local media} through feature \textbf{article and video interview} highlighting \textbf{community impact and educational innovation} in \textbf{STEM accessibility}}
+          \resumeItemListEnd
+            \vspace{-12pt}
+  %-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{\textbf{Languages}{: Python, Java, SQL, HTML5, CSS, JavaScript, C\#} \\[1mm]
+     \textbf{Tools/Libraries}{: .NET, Postman, PowerBI, Git, Pandas, Numpy, Seaborn, Restful API, ROS2} \\[1mm]
+    
+    }}
+ \end{itemize}
+ \vspace{-16pt}
+ \vspace{3pt}
+\vspace{10pt}
+
+\vspace{-15pt}
+
+
 
 \end{document}
